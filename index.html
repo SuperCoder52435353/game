@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Shooter Game</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        canvas { display: block; }
+        #settings {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px;
+            font-family: Arial, sans-serif;
+            border-radius: 10px;
+            display: none;
+        }
+        #settings select, #settings button {
+            margin: 5px;
+            padding: 8px;
+            border-radius: 5px;
+            background: #333;
+            color: white;
+            border: none;
+        }
+        #settingsIcon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="settingsIcon" onclick="toggleSettings()">⚙️</div>
+    <div id="settings">
+        <label>FPS:</label>
+        <select id="fpsSelect">
+            <option value="30">30 FPS</option>
+            <option value="60" selected>60 FPS</option>
+            <option value="120">120 FPS</option>
+        </select><br>
+        <label>Graphics:</label>
+        <select id="graphicsSelect">
+            <option value="smooth">Smooth</option>
+            <option value="balanced" selected>Balanced</option>
+            <option value="hd">HD</option>
+            <option value="ultrahd">Ultra HD</option>
+            <option value="extremehd">Extreme HD</option>
+            <option value="qhdr">Q HDR++</option>
+        </select><br>
+        <button onclick="applySettings()">Apply</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
